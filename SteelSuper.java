@@ -14,7 +14,13 @@ import java.util.ArrayList;
 public class SteelSuper {
     private int amount;
     private double baseCost;
-    private ArrayList<String> types = new ArrayList<>();
+    //fabodo renamed type to form factor
+    private String formFactor;
+    
+    //unified form factors with their price offsets. when on is set or changed, the other is too
+    private ArrayList<String> formFactors;
+    private ArrayList<Integer> priceOffsets;;
+    
     public SteelSuper(int amount, double cost){
         this.amount = amount;
         this.baseCost = cost;
@@ -34,32 +40,41 @@ public class SteelSuper {
     public double getTotalCost(){
         return this.amount * this.baseCost;
     }
-    public void setTypes(){
-        String[] list = {"Flat Square","Round Bar", "Square Bar", "Beam"};
-        for(int a = 0; a < list.length; a++ ){
-            this.types.add(list[a]);
+    //uses parallel data structures to store form factors and their price 
+    //offsets in corresponding indices of their respective arrays
+    public void setFormFactors(){
+        String[] forms = {"Flat Square","Round Bar", "Square Bar", "Beam"};
+        formFactors = new ArrayList(forms.length);
+        
+        int[] offsets = {-5,-10, 5, 20};
+        priceOffsets = new ArrayList(offsets.length);
+        
+        for(int a = 0; a < forms.length; a++ ){
+            formFactors.add(forms[a]);
+            priceOffsets.add(offsets[a]);
         }
     }
-    public boolean isValidType(String type){
-        for(int a = 0; a < this.types.size() ; a++){
-               if(types.get(a).equalsIgnoreCase(type)){
+    public boolean isValidFormFactor(String type){
+        for(int a = 0; a < formFactors.size() ; a++){
+               if(formFactors.get(a).equalsIgnoreCase(type)){
                    return true;
                }
         }
         return false;
     }
-    public void setTypeCost(String type){
-        if(isValidType(type)){
-            if(type.equalsIgnoreCase("Flat Square")){
-               this.baseCost += -5;
-            }else if(type.equalsIgnoreCase("Round Bar")){
-               this.baseCost += -10;
-            }else if(type.equalsIgnoreCase("Square Bar")){
-               this.baseCost += 5;
-            }else if (type.equalsIgnoreCase("Beam")){
-               this.baseCost += 20;
-            }            
-        }
+    //formFactor is only set once (when null); can be 'changed' in a different method
+    public void setFormFactor(String option){
+    	if (formFactor == null && isValidFormFactor(option)){
+    		baseCost += priceOffsets.get(formFactors.indexOf(option));
+    		formFactor = option;
+    	}
     }
-    
+    //changes form factor only if the new value is valid and differs from the existing value
+    public void changeFormFactor(String option){
+    	if (formFactor == null) setFormFactor(option);
+    	else if (!option.equalsIgnoreCase(formFactor) && isValidFormFactor(option)){
+    		baseCost += priceOffsets.get(formFactors.indexOf(option)) - priceOffsets.get(formFactors.indexOf(formFactor));
+    		formFactor = option;
+    	}
+    }
 }

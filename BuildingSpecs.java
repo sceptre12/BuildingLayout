@@ -76,8 +76,9 @@ class firstFloor{
     public void totalCost(String type){
         this.totalCost = this.EcoCement.getTotalcost() + SteelTypeCost(type);
     }
+    //fabodo replaced setTypeCost with setFormFactor
     private double SteelTypeCost(String type){
-        this.CarbonSteel.setTypeCost(type);
+        this.CarbonSteel.setFormFactor(type);
         return this.CarbonSteel.getTotalCost();
     }
     public void totalTime(){
@@ -118,8 +119,9 @@ class SecondFloor{
     public void totalCost(String type){
         this.totalCost = this.EcoCement.getTotalcost() + SteelTypeCost(type);
     }
+  //fabodo replaced setTypeCost with setFormFactor
     private double SteelTypeCost(String type){
-        this.CarbonSteel.setTypeCost(type);
+        this.CarbonSteel.setFormFactor(type);
         return this.CarbonSteel.getTotalCost();
     }
     public void totalTime(){
@@ -160,8 +162,9 @@ class ThirdFloor{
     public void totalCost(String type){
         this.totalCost = this.EcoCement.getTotalcost() + SteelTypeCost(type);
     }
+  //fabodo replaced setTypeCost with setFormFactor
     private double SteelTypeCost(String type){
-        this.CarbonSteel.setTypeCost(type);
+        this.CarbonSteel.setFormFactor(type);
         return this.CarbonSteel.getTotalCost();
     }
     public void totalTime(){
