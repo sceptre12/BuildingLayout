@@ -13,7 +13,13 @@ public class FastDryCement extends CementSuper{
     private static final int timeToDry = 5; // in hours 
     private static final double cost = 38.50;
     
-    public  FastDryCement(int amount){
+    public FastDryCement(int amount){        
         super(cost,timeToDry, amount);        
     }
+    
+    public double getFastDryTime(){
+       super.setTotalTimeToDry(timeToDry);
+       return super.getTimeToDry();
+    }
+    
 }

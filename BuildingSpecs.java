@@ -64,30 +64,29 @@ class firstFloor{
         create your own instance of cement which you will choose to build the 
         first floor;
     */
-    private EcoCement EcoCement ;
-    private CheapCement CheapCement ;
-    private FastDryCement FastDryCement ;
-    
+    private EcoCement EcoCement ;  
     private CarbonSteel CarbonSteel;
-    private AluminumSteel AluminumSteel;
-    private ColdFinishSteel ColdFinishSteel;
+    private double totalCost;
+    private double totalTime;
     
     public firstFloor(EcoCement Cement, CarbonSteel Steel){
         this.EcoCement = Cement;
         this.CarbonSteel = Steel;
     }
-    public double totalCost(String type){
-        return this.EcoCement.getTotalcost() + SteelTypeCost(type);
+    public void totalCost(String type){
+        this.totalCost = this.EcoCement.getTotalcost() + SteelTypeCost(type);
     }
-    public double SteelTypeCost(String type){
+    private double SteelTypeCost(String type){
         this.CarbonSteel.setTypeCost(type);
         return this.CarbonSteel.getTotalCost();
     }
-    public int totalTime(){
-        this.EcoCement
+    public void totalTime(){
+       this.totalTime = this.EcoCement.getEcoDryTime();
     }
-    
-    
+    public String toString(){
+       return "Total Project Cost: " + this.totalCost + 
+               "\n Total Time: " + this.totalTime;
+    }    
 }
 class SecondFloor{
     
@@ -107,23 +106,29 @@ class SecondFloor{
         create your own instance of cement which you will choose to build the 
         first floor;
     */
-    private EcoCement EcoCement ;
-    private CheapCement CheapCement ;
-    private FastDryCement FastDryCement ;
-    
+    private EcoCement EcoCement ;  
     private CarbonSteel CarbonSteel;
-    private AluminumSteel AluminumSteel;
-    private ColdFinishSteel ColdFinishSteel;
+    private double totalCost;
+    private double totalTime;
     
-    public SecondFloor(EcoCement Cement, int amount){
-        
+    public SecondFloor(EcoCement Cement, CarbonSteel Steel){
+        this.EcoCement = Cement;
+        this.CarbonSteel = Steel;
     }
-    public SecondFloor(CheapCement Cement, int amount){
-        
+    public void totalCost(String type){
+        this.totalCost = this.EcoCement.getTotalcost() + SteelTypeCost(type);
     }
-    public SecondFloor(FastDryCement Cement, int amount){
-        
-    }    
+    private double SteelTypeCost(String type){
+        this.CarbonSteel.setTypeCost(type);
+        return this.CarbonSteel.getTotalCost();
+    }
+    public void totalTime(){
+       this.totalTime = this.EcoCement.getEcoDryTime();
+    }
+    public String toString(){
+       return "Total Project Cost: " + this.totalCost + 
+               "\n Total Time: " + this.totalTime;
+    }   
 }
 class ThirdFloor{
     
@@ -143,21 +148,27 @@ class ThirdFloor{
         create your own instance of cement which you will choose to build the 
         first floor;
     */
-    private EcoCement EcoCement ;
-    private CheapCement CheapCement ;
-    private FastDryCement FastDryCement ;
-    
+    private EcoCement EcoCement ;  
     private CarbonSteel CarbonSteel;
-    private AluminumSteel AluminumSteel;
-    private ColdFinishSteel ColdFinishSteel;
+    private double totalCost;
+    private double totalTime;
     
-    public ThirdFloor(EcoCement Cement, int amount){
-        
+    public ThirdFloor(EcoCement Cement, CarbonSteel Steel){
+        this.EcoCement = Cement;
+        this.CarbonSteel = Steel;
     }
-    public ThirdFloor(CheapCement Cement, int amount){
-        
+    public void totalCost(String type){
+        this.totalCost = this.EcoCement.getTotalcost() + SteelTypeCost(type);
     }
-    public ThirdFloor(FastDryCement Cement, int amount){
-        
+    private double SteelTypeCost(String type){
+        this.CarbonSteel.setTypeCost(type);
+        return this.CarbonSteel.getTotalCost();
+    }
+    public void totalTime(){
+       this.totalTime = this.EcoCement.getEcoDryTime();
+    }
+    public String toString(){
+       return "Total Project Cost: " + this.totalCost + 
+               "\n Total Time: " + this.totalTime;
     }
 }

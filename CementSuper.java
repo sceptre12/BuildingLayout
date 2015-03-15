@@ -11,9 +11,10 @@ package buildinglayout;
  */
 public class CementSuper {
     private double cost;   
-    private int timeToDry; // in hours 
+    private double timeToDry; // in hours 
     private int amount;
     private static final int Sqft = 2;
+    
     public CementSuper(double cost, int timeToDry, int amount ) {
         this.cost = cost;
         this.timeToDry = timeToDry;
@@ -29,12 +30,19 @@ public class CementSuper {
         this.cost = cost;
     }
 
-    public int getTimeToDry() {
+    public void setTotalTimeToDry(int time){
+        /*
+         only 200sqft of any cement can be used at any given time
+         returns the time for the entire amount in hours
+        */
+       this.timeToDry = (this.amount / 100) * time;
+        
+    }
+    public double getTimeToDry(){
         return timeToDry;
     }
-
-    public void setTimeToDry(int timeToDry) {
-        this.timeToDry = timeToDry;
+    public double timeinDay(){
+        return this.timeToDry/ 24;
     }
     
     public int getAmount() {

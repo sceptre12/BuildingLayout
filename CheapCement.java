@@ -17,5 +17,8 @@ public class CheapCement extends CementSuper{
         super(cost,timeToDry, amount);        
     }
     
-    
+    public double getCheapDryTime(){
+       super.setTotalTimeToDry(timeToDry);
+       return super.getTimeToDry();
+    }
 }

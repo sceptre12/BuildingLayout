@@ -16,4 +16,8 @@ public class EcoCement extends CementSuper{
     public EcoCement(int amount){
         super(cost,timeToDry, amount);        
     }
+    public double getEcoDryTime(){
+       super.setTotalTimeToDry(timeToDry);
+       return super.getTimeToDry();
+    }
 }
