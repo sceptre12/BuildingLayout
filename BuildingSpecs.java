@@ -23,14 +23,14 @@ public class BuildingSpecs {
 class Foundation{
     /*
         This is the base class for the building
-        this class needs about 3700sqft of eco cement; 185000
+        this class needs about 7400sqft of eco cement; 185000
         digging and setting up the landscape takes 3 weeks; 
         The Foundation takes up 2500 sqft of that same cement to make that takes a week to fully settle; 
 
         it has 24 pillars each taking 12 hours to be fully stable 
         but only 6 can be set up at any given time thats 4 days ;
 
-        each pillar takes up about 50 sqft of cement to make; 1200 sqft used 
+        each pillar takes up about 50 sqft of cement to make; 2400 sqft used 
         
     */
     private EcoCement eco;
@@ -49,17 +49,20 @@ class Foundation{
 class firstFloor{
     
     /*
-        Cost for addtional pipes, wiring, plumbing, etc.. = 90000
+        Cost for addtional pipes, wiring, plumbing, etc.. = 60000
+        Installing the above takes a month;
 
-        This class also needs about 450 steel(type) beams;       
-        this class also needs about 300 4ft by 12ft dry wall ;        
-        
+        This class also needs about 450 steel(type) beams;        
+        This class also needs about 650 steel(type) Round Bar;
+        This class also needs about 300 steel(type) Square Bar;
+        This class also needs about 150 steel(type) Flat Square;
+        For every two steel that you install that takes an hour of time. 
+        32 days
+        An additional 4000 sqft of cement is necessary to start constructing the next floor
 
-        An additional 2000 sqft of cement is necessary to start constructing the next floor
-
-        base cost for this floor is $122,500
+        base cost for this floor is $60,000
     */
-    private static final int addtionalCost =  122500;
+    private static final int addtionalCost =  60000;
     /*
         create your own instance of cement which you will choose to build the 
         first floor;
@@ -92,17 +95,20 @@ class firstFloor{
 class SecondFloor{
     
     /*
-        Cost for addtional pipes, wiring, plumbing, etc.. = 90000
+        Cost for addtional pipes, wiring, plumbing, etc.. = 60000
+        Installing the above takes a month;
+    
+        This class also needs about 250 steel(type) beams;       
+        This class also needs about 650 steel(type) Round Bar;
+        This class also needs about 300 steel(type) Square Bar;
+        This class also needs about 150 steel(type) Flat Square;
+        For every two steel that you install that takes an hour of time. 
+        32 days
+        An additional 4000 sqft of cement is necessary to start constructing the next floor
 
-        This class also needs about 450 steel(type) beams;       
-        this class also needs about 300 4ft by 12ft dry wall ;        
-        
-
-        An additional 2000 sqft of cement is necessary to start constructing the next floor
-
-        base cost for this floor is $62,500
+        base cost for this floor is $60,000
     */
-    private static final int addtionalCost =  90000;
+    private static final int addtionalCost =  60000;
     /*
         create your own instance of cement which you will choose to build the 
         first floor;
@@ -135,17 +141,20 @@ class SecondFloor{
 class ThirdFloor{
     
     /*
-        Cost for addtional pipes, wiring, plumbing, etc.. = 90000
-
-        This class also needs about 450 steel(type) beams;       
-        this class also needs about 300 4ft by 12ft dry wall ;        
+        Cost for addtional pipes, wiring, plumbing, etc.. = 60000
+        Installing the above takes a month;
         
+        This class also needs about 450 steel(type) beams;         
+        This class also needs about 650 steel(type) Round Bar;  
+        This class also needs about 300 steel(type) Square Bar;
+        This class also needs about 150 steel(type) Flat Square;
+        For every two steel that you install that takes an hour of time. 
+        32 days
+        An additional 4000 sqft of cement is necessary to start constructing the next floor
 
-        An additional 2000 sqft of cement is necessary to start constructing the next floor
-
-        base cost for this floor is $62,500
+        base cost for this floor is $60,000
     */
-    private static final int addtionalCost =  90000;
+    private static final int addtionalCost =  60000;
     /*
         create your own instance of cement which you will choose to build the 
         first floor;

@@ -32,10 +32,11 @@ public class CementSuper {
 
     public void setTotalTimeToDry(int time){
         /*
-         only 200sqft of any cement can be used at any given time
+         only 100sqft of any cement can be used at any given time
          returns the time for the entire amount in hours
         */
-       this.timeToDry = (this.amount / 100) * time;
+       double bagAmount = this.amount / 2;
+       this.timeToDry = (bagAmount / 100) * time;
         
     }
     public double getTimeToDry(){
